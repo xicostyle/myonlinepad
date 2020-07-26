@@ -1,4 +1,26 @@
+@import '../node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css';
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.flex-spacer{
+flex-grow: 1;
+}
+
+.background-define{
+    background-color: #303030;
+}
+
+.m-b-0{
+    margin-bottom: 0px !important;
+}
+
+.m-t-54{
+    margin-top: 54px !important;
+}
+
+.background-color-default{
+    background-color: #0e6b0e !important;
+}

@@ -1,1 +1,43 @@
-<p>home works!</p>
+<p fxflex=100 class="mat-elevation-z6 m-b-0">
+  <mat-toolbar color="primary" fxflex=100 class="toolbar-conf">
+
+    <button [matMenuTriggerFor]="menu" fxHide.gt-sm fxShow.lt-md mat-icon-button class="example-icon"
+      aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Início</button>
+        <button  (click)="cadastrarSe()" mat-menu-item>Cadastre-se</button>
+        <button (click)="entrar()" mat-menu-item>Entrar</button>
+      </mat-menu>
+    </button>
+
+    <button fxHide.lt-md mat-button aria-label="Example icon-button with menu icon">
+      <mat-icon class="home-icon">home</mat-icon>
+      Início
+    </button>
+
+    <div fxHide.lt-md class="flex-spacer"></div>
+
+    <button (click)="cadastrarSe()" fxHide.lt-md mat-button>Cadastre-se</button>
+
+    <button (click)="entrar()" fxHide.lt-md mat-button>Entrar</button>
+
+  </mat-toolbar>
+
+</p>
+
+
+<div fxFlex="100" fxLayout="row wrap" class="header m-t-54">
+  <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center center">
+    <label fxFlex="100" class="label-welcome">Bem Vindo ao My Online Pad</label>
+    <label fxFlex="100" class="label-sub-welcome">A maneira mais fácil de compartilhar o seu caderno online ;)</label>
+
+    <a class="mat-focus-indicator docs-button mat-raised-button mat-button-base create-my-online-pad" tabindex="0" aria-disabled="false">
+      <span class="mat-button-wrapper">Criar my online pad</span>
+
+      <div matripple="" class="mat-ripple mat-button-ripple"></div>
+
+      <div class="mat-button-focus-overlay"></div>
+    </a>
+  </div>
+</div>
