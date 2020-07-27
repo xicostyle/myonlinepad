@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MyPadOnlineCadastrarSeComponent } from '../components/my-pad-online-cadastrar-se/my-pad-online-cadastrar-se.component';
+import { MyPadOnlineEntrarComponent } from '../components/my-pad-online-entrar/my-pad-online-entrar.component';
 
 @Component({
   selector: 'app-home',
@@ -26,6 +27,10 @@ export class HomeComponent implements OnInit {
 
 
   entrar() {
+    const dialogRef = this.dialog.open(MyPadOnlineEntrarComponent, {
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
 }

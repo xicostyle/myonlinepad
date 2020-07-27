@@ -16,11 +16,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MyPadOnlineCadastrarSeComponent } from './components/my-pad-online-cadastrar-se/my-pad-online-cadastrar-se.component';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
+import { MyPadOnlineEntrarComponent } from './components/my-pad-online-entrar/my-pad-online-entrar.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MyPadOnlineCadastrarSeComponent
+    MyPadOnlineCadastrarSeComponent,
+    MyPadOnlineEntrarComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
     MatSnackBarModule
   ],
   exports: [
-    MyPadOnlineCadastrarSeComponent
+    MyPadOnlineCadastrarSeComponent,
+    MyPadOnlineEntrarComponent
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}

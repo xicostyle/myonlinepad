@@ -15,7 +15,7 @@
         </mat-form-field>
     </div>
     <div fxFlex="100">
-        <mat-form-field fxFlex="50" appearance="fill">
+        <mat-form-field fxFlex="49" appearance="fill">
             <mat-label>Senha:</mat-label>
             <input [formControl]="password" matInput [type]="hide ? 'password' : 'text'">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
@@ -23,7 +23,7 @@
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
         </mat-form-field>
-        <mat-form-field fxFlex="50" appearance="fill">
+        <mat-form-field fxFlex="49" appearance="fill">
             <mat-label>Novamente sua senha:</mat-label>
             <input matInput [type]="hide ? 'password' : 'text'">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
