@@ -2,25 +2,64 @@
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.flex-spacer{
-flex-grow: 1;
+html,
+body {
+    height: 100%;
 }
 
-.background-define{
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.flex-spacer {
+    flex-grow: 1;
+}
+
+.background-define {
     background-color: #303030;
 }
 
-.m-b-0{
+.m-b-0 {
     margin-bottom: 0px !important;
 }
 
-.m-t-54{
+.m-t-54 {
     margin-top: 54px !important;
 }
 
-.background-color-default{
+.background-color-default {
     background-color: #0e6b0e !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.m-t-5 {
+    margin-top: 5px !important;
+}
+
+.m-b-5 {
+    margin-bottom: 5px !important;
+}
+
+.m-t-10 {
+    margin-top: 10px !important;
+}
+
+.m-b-10 {
+    margin-bottom: 10px !important;
+}
+
+.label-default {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.label-underline {
+    text-decoration: underline;
+}
+
+.font-size-16 {
+    font-size: 16px;
 }

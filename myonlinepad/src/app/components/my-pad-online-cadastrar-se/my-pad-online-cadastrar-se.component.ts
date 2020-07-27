@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -8,27 +8,32 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './my-pad-online-cadastrar-se.component.html',
   styleUrls: ['./my-pad-online-cadastrar-se.component.css']
 })
-export class MyPadOnlineCadastrarSeComponent {
+export class MyPadOnlineCadastrarSeComponent implements OnInit {
+
+  formGroupCadastrarSe: FormGroup;
+  hidePassword = true;
+
   constructor(public dialogRef: MatDialogRef<MyPadOnlineCadastrarSeComponent>,
-    public snackBar: MatSnackBar) {
+    public snackBar: MatSnackBar,
+    private formBuilder: FormBuilder) {
+    
   }
 
-  email = new FormControl('', [Validators.required, Validators.email]);
-  name = new FormControl('', Validators.required);
-  password = new FormControl('', Validators.required);
+  ngOnInit(){
 
-  hide = true;
+    this.formGroupCadastrarSe = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]]
+    });
+    
+    this.hidePassword = true;
+  }
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
+  submitCriarConta() {
+    if (this.formGroupCadastrarSe.valid) {
+      this.snackBar.open('Em construção', 'Aviso')
     }
-
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
-
-  criarConta() {
-    this.snackBar.open('Em construção', 'Aviso')
   }
 
   voltar() {

@@ -1,41 +1,35 @@
-<div class="example-container" fxFlex="450px" fxLayout="row wrap">
-    <label fxFlex="100" class="label-cadastre-se">Cadastre-se</label>
-    <label fxFlex="100" class="label-sub-cadastre-se">Se cadastre para organizar melhor os seus pad's</label>
-    <div fxFlex="100">
-        <mat-form-field fxFlex="100" appearance="fill">
-            <mat-label>Digite seu username:</mat-label>
-            <input matInput [formControl]="name" required>
-        </mat-form-field>
-    </div>
-    <div fxFlex="100">
-        <mat-form-field fxFlex="100" appearance="fill">
-            <mat-label>Digite seu e-mail:</mat-label>
-            <input matInput [formControl]="email" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-    </div>
-    <div fxFlex="100">
-        <mat-form-field fxFlex="49" appearance="fill">
-            <mat-label>Senha:</mat-label>
-            <input [formControl]="password" matInput [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+<div class="example-container" fxFlex="410px" fxLayout="row wrap">
+    <form fxFlex="100" fxLayout="row wrap" [formGroup]="formGroupCadastrarSe" (ngSubmit)="submitCriarConta()">
+        <label fxFlex="100" class="label-cadastre-se">Cadastre-se</label>
+        <label fxFlex="100" class="label-sub-cadastre-se">Se cadastre para organizar melhor os seus pad's</label>
+        <div fxFlex="100">
+            <mat-form-field fxFlex="100" appearance="fill">
+                <mat-label>Digite seu username:</mat-label>
+                <input matInput [formControl]="formGroupCadastrarSe.controls.username" required>
+            </mat-form-field>
+        </div>
+        <div fxFlex="100" class="m-t-5">
+            <mat-form-field fxFlex="100" appearance="fill">
+                <mat-label>Digite seu e-mail:</mat-label>
+                <input matInput [formControl]="formGroupCadastrarSe.controls.email" required>
+                <mat-error *ngIf="formGroupCadastrarSe.controls.email.hasError('email')">Digite um e-mail válido</mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="100" class="m-t-5">
+            <mat-form-field fxFlex="100" appearance="fill">
+                <mat-label>Digite sua senha:</mat-label>
+                <input [formControl]="formGroupCadastrarSe.controls.password" matInput [type]="hidePassword ? 'password' : 'text'" required>
+                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'hidePassword password'" [attr.aria-pressed]="hidePassword">
+                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-        </mat-form-field>
-        <mat-form-field fxFlex="49" appearance="fill">
-            <mat-label>Novamente sua senha:</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>
-    </div>
+            </mat-form-field>
+        </div>
 
-    <div fxFlex="100" fxLayoutAlign="end end" fxLayoutGap="10px">
-        <button (click)="voltar()" mat-raised-button>Voltar</button>
-        <button (click)="criarConta()" mat-raised-button class="background-color-default">Criar conta</button>
-    </div>
+        <div fxFlex="100" fxLayoutAlign="end end" fxLayoutGap="10px">
+            <button (click)="voltar()" mat-raised-button>Voltar</button>
+            <button type="submit" mat-raised-button class="background-color-default">Criar conta</button>
+        </div>
+
+    </form>
 
 </div>

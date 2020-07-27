@@ -16,15 +16,12 @@ export class HomeComponent implements OnInit {
   }
 
   cadastrarSe() {
+    const dialogRef = this.dialog.open(MyPadOnlineCadastrarSeComponent, {
+    });
 
-      const dialogRef = this.dialog.open(MyPadOnlineCadastrarSeComponent, {
-      });
-
-      dialogRef.afterClosed().subscribe(result => {
-      });
-
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
-
 
   entrar() {
     const dialogRef = this.dialog.open(MyPadOnlineEntrarComponent, {
@@ -33,4 +30,5 @@ export class HomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
     });
   }
+
 }
