@@ -1,0 +1,21 @@
+.example-container .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+}
+
+.label-entrar {
+    font-size: 23px;
+    color: white;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.label-sub-entrar {
+    font-size: 16px;
+    color: white;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,54 @@
+<div class="example-container" fxFlex="450px" fxLayout="row wrap">
+
+    <div fxFlex="100" fxLayout="row wrap" *ngIf="!recoverPassword">
+        <form fxFlex="100" fxLayout="row wrap" [formGroup]="formGroupEntrar" (ngSubmit)="submitEntrar()">
+            <label fxFlex="100" class="label-entrar">Entrar</label>
+            <label fxFlex="100" class="label-sub-entrar">Bem-vindo novamente ;)</label>
+            <div fxFlex="100">
+                <mat-form-field fxFlex="100" appearance="fill">
+                    <mat-label>Digite seu username ou e-mail:</mat-label>
+                    <input matInput [formControl]="formGroupEntrar.controls.usarnameEmail" required>
+                </mat-form-field>
+            </div>
+            <div fxFlex="100">
+                <mat-form-field fxFlex="100" appearance="fill">
+                    <mat-label>Digite sua senha:</mat-label>
+                    <input [formControl]="formGroupEntrar.controls.password" matInput [type]="hidePassword ? 'password' : 'text'" required>
+                    <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'hidePassword password'" [attr.aria-pressed]="hidePassword">
+                        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="100" fxLayoutAlign="end end" class="m-b-10">
+                <label (click)="recoverPassword = !recoverPassword;" class="cursor-pointer label-default label-underline font-size-16">Esqueceu sua senha?</label>
+            </div>
+
+            <div fxFlex="100" fxLayoutAlign="end end" fxLayoutGap="10px">
+                <button (click)="voltar()" mat-raised-button>Voltar</button>
+                <button type="submit" mat-raised-button class="background-color-default">Entrar</button>
+            </div>
+        </form>
+    </div>
+
+    <div fxFlex="100" fxLayout="row wrap" *ngIf="recoverPassword">
+        <form fxFlex="100" fxLayout="row wrap" [formGroup]="formGroupRecuperarSenha" (ngSubmit)="submitRecuperarSenha()">
+            <label fxFlex="100" class="label-entrar">Recuperar senha</label>
+            <label fxFlex="100" class="label-sub-entrar">Esqueceu sua senha?Não se preocupe!!!</label>
+            <div fxFlex="100">
+                <mat-form-field fxFlex="100" appearance="fill">
+                    <mat-label>Digite seu e-mail:</mat-label>
+                    <input matInput [formControl]="formGroupRecuperarSenha.controls.email" required>
+                    <mat-error *ngIf="formGroupRecuperarSenha.controls.email.hasError('email')">Digite um e-mail válido</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="100" fxLayoutAlign="end end" fxLayoutGap="10px">
+                <button (click)="recoverPassword = !recoverPassword;" mat-raised-button>Voltar</button>
+                <button type="submit" mat-raised-button class="background-color-default">Recuperar
+                    senha</button>
+            </div>
+        </form>
+    </div>
+
+</div>
